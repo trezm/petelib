@@ -1,0 +1,23 @@
+[package]
+name = "thruster-auth"
+version = "0.1.0"
+edition = "2021"
+
+[features]
+default = [
+  "models"
+]
+models = [
+  "deadpool-postgres",
+  "tokio-postgres",
+  "usual"
+]
+  
+[dependencies]
+async-trait = "0.1.80"
+chrono = "0.4.38"
+deadpool-postgres = { version = "0.12.1", optional = true }
+thruster = { version = "1.3.10", features = ["hyper_server"] }
+tokio-postgres = { version = "0.7.10", optional = true, features = ["with-uuid-0_8", "with-chrono-0_4"] }
+usual = { version = "0.1.2", optional = true, features = ["tokio-postgres"] }
+uuid = { version = "0.8.1", features = ["serde", "v4"] }
