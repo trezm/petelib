@@ -237,16 +237,16 @@ pub fn petelib(args: TokenStream, item: TokenStream) -> TokenStream {
         #impl_tokens
     };
 
-    use rust_format::{Config, Formatter, PostProcess, RustFmt};
-    let config = Config::new_str().post_proc(PostProcess::ReplaceMarkersAndDocBlocks);
-    proc_macro::Span::call_site()
-        .note("Thruster code output")
-        .note(
-            RustFmt::from_config(config)
-                .format_tokens(gen.clone())
-                .unwrap_or_else(|_| gen.to_string()),
-        )
-        .emit();
+    // use rust_format::{Config, Formatter, PostProcess, RustFmt};
+    // let config = Config::new_str().post_proc(PostProcess::ReplaceMarkersAndDocBlocks);
+    // proc_macro::Span::call_site()
+    //     .note("Thruster code output")
+    //     .note(
+    //         RustFmt::from_config(config)
+    //             .format_tokens(gen.clone())
+    //             .unwrap_or_else(|_| gen.to_string()),
+    //     )
+    //     .emit();
 
     gen.into()
 }
