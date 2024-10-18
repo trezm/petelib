@@ -1,0 +1,16 @@
+[package]
+name = "usual-macros"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+proc-macro = true
+  
+[dependencies]
+convert_case = "0.6.0"
+darling = "0.20.10"
+proc-macro2 = "1.0.87"
+quote = "1.0.37"
+rust-format = { version = "0.3.4", features = ["post_process", "token_stream"] }
+syn = "2.0.79"
+usual = { version = "0.1.2", features = ["tokio-postgres"] }
